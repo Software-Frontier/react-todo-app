@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --config webpack/webpack.dev.js --open",
-    "build": "webpack --config webpack/webpack.prod.js"
+    "build": "webpack --config webpack/webpack.prod.js",
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,sass,md}\""
   },
   "repository": {
     "type": "git"
@@ -19,16 +20,38 @@
   "license": "MIT",
   "homepage": "https://github.com/Software-Frontier/react-starter-kit#readme",
   "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@babel/runtime": "^7.14.6",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
+    "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.0",
     "css-loader": "^5.2.6",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "file-loader": "^6.2.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.6.0",
+    "prettier": "^2.3.1",
+    "react-refresh": "^0.10.0",
     "style-loader": "^2.0.0",
+    "typescript": "^4.3.2",
     "webpack": "^5.39.1",
+    "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }

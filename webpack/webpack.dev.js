@@ -1,9 +1,13 @@
 const { merge } = require('webpack-merge'),
+  ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'),
   config = require('./webpack.config');
 
 module.exports = merge(config, {
   mode: 'development',
-  devtool: 'inline-source-map',
+  devtool: 'cheap-module-source-map',
+  devServer: {
+    hot: true,
+  },
   module: {
     rules: [
       {
@@ -12,4 +16,5 @@ module.exports = merge(config, {
       },
     ],
   },
+  plugins: [new ReactRefreshWebpackPlugin()],
 });
