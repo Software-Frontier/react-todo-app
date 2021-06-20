@@ -1,11 +1,14 @@
 import { FC } from 'react';
+import Header from './components/Header';
+import Main from './components/Main';
 
-const App = () => {
+const App: FC = () => {
   return (
-    <div>
-      <h1>Hello World</h1>
+    <div id='App'>
+      <Header />
+      <Main />
     </div>
   );
-};
+}
 
 export default App;

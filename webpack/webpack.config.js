@@ -33,7 +33,7 @@ module.exports = {
               ],
               plugins: [
                 [
-                  '@babel/plugin-transfrom-runtime',
+                  '@babel/plugin-transform-runtime',
                   {
                     regenerator: true,
                   },

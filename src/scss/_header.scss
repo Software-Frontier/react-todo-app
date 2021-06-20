@@ -1,0 +1,47 @@
+header#Header {
+  @extend .hero, .is-small;
+  background-color: $deep-dark;
+
+  div:first-child {
+    @extend .hero-body, .container, .has-text-centered, .py-6;
+
+    h1:first-child {
+      @extend .title, .is-size-1, .has-text-light;
+    }
+
+    h1:first-child + h2 {
+      @extend .subtitle, .is-size-6, .has-text-light, .mb-2;
+    }
+
+    form:last-child {
+      div:first-child {
+        @extend .field, .py-0;
+
+        p:first-child {
+          @extend .control, .has-icons-left;
+
+          input:first-child {
+            @extend .input, .is-info, .is-rounded;
+          }
+
+          input:first-child + span {
+            @extend .icon, .is-left;
+          }
+        }
+
+        p:first-child + button:last-child {
+          @extend .button,
+            .is-info,
+            .is-outlined,
+            .is-rounded,
+            .is-fullwidth,
+            .mt-1;
+
+          span:last-child {
+            @extend .icon;
+          }
+        }
+      }
+    }
+  }
+}

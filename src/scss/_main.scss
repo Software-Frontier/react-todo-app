@@ -1,0 +1,57 @@
+main#Main {
+  @extend .has-background-grey, .py-1;
+  height: 60vh;
+
+  div:first-child {
+    @extend .level;
+
+    div:first-child {
+      @extend .level-item, .is-flex, .is-flex-direction-column;
+
+      h3:first-child {
+        @extend .title, .has-text-light, .my-3;
+      }
+
+      & > :is(div) {
+        @extend .field, .has-addons;
+
+        & > p:nth-child(1) {
+          & > button:first-child {
+            @extend .is-success;
+            border-radius: 50% 0 0 50%;
+          }
+        }
+
+        & > p:nth-child(3) {
+          & > button:first-child {
+            @extend .is-warning;
+          }
+        } 
+
+        & > p:nth-child(4) {
+          & > button:first-child {
+            @extend .is-danger;
+            border-radius: 0 50% 50% 0;
+          }
+        } 
+
+        & > :is(p) {
+          @extend .control;
+
+          & > :is(button) {
+            @extend .button;
+            border-radius: 0;
+
+            & > :is(span) {
+              @extend .icon;
+            }
+          }
+
+          & > :is(input) {
+            @extend .input;
+          }
+        }
+      }
+    }
+  }
+}

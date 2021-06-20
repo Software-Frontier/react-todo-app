@@ -15,7 +15,11 @@
   },
   "keywords": [
     "react",
-    "webpack"
+    "typescript",
+    "webpack",
+    "gulp",
+    "bulma",
+    "sass"
   ],
   "author": "Software Frontier",
   "license": "MIT",
@@ -61,7 +65,8 @@
   },
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0"
   },
   "include": [
     "./src/declarations.d.ts",

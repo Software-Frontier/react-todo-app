@@ -1,0 +1,10 @@
+footer#Footer {
+  @extend .footer;
+
+  div:first-child {
+    @extend .content, .has-text-centered;
+
+    p:first-child {
+    }
+  }
+}
