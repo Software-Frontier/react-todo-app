@@ -7,7 +7,8 @@
   "scripts": {
     "start": "webpack serve --config webpack/webpack.dev.js --open",
     "build": "webpack --config webpack/webpack.prod.js",
-    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,sass,md}\""
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,sass,md}\"",
+    "gulp": "node -r esm ./node_modules/gulp/bin/gulp.js"
   },
   "repository": {
     "type": "git"
@@ -30,18 +31,27 @@
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.8",
     "babel-loader": "^8.2.2",
+    "bulma": "^0.9.3",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "copy-webpack-plugin": "^9.0.0",
     "css-loader": "^5.2.6",
     "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "esm": "^3.2.25",
     "file-loader": "^6.2.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-clean-dir": "^1.0.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.6.0",
     "prettier": "^2.3.1",
     "react-refresh": "^0.10.0",
+    "sass": "^1.35.1",
     "style-loader": "^2.0.0",
     "typescript": "^4.3.2",
     "webpack": "^5.39.1",
@@ -52,5 +62,13 @@
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
-  }
+  },
+  "include": [
+    "./src/declarations.d.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
