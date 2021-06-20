@@ -28,4 +28,6 @@ $input-shadow: none;
 
 div#App {
   @import './header';
+  @import './main';
+  @import './footer';
 }
