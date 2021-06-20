@@ -5,6 +5,7 @@ footer#Footer {
     @extend .content, .has-text-centered;
 
     p:first-child {
+      @extend .is-size-6;
     }
   }
 }

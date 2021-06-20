@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import { BsPencil, IoIosAddCircleOutline } from 'react-icons/all';
+import { BsPencil } from 'react-icons/bs';
+import { IoIosAddCircleOutline } from 'react-icons/io';
 
 const Header: FC = () => {
   return (
