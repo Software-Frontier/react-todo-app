@@ -1,0 +1,33 @@
+div#Modal {
+  @extend .modal, .is-active;
+
+  div:first-child {
+    @extend .modal-background;
+  }
+
+  div:first-child + div {
+    @extend .modal-card;
+
+    header {
+      @extend .modal-card-head, .has-background-danger;
+
+      :is(p) {
+        @extend .modal-card-title, .has-text-light, .has-text-centered;
+      }
+    }
+
+    @import './section';
+
+    footer {
+      @extend .modal-card-foot, .is-flex, .is-justify-content-center;
+
+      :is(button) {
+        @extend .button, .is-danger, .is-rounded;
+
+        span:first-child + span {
+          @extend .icon;
+        }
+      }
+    }
+  }
+}

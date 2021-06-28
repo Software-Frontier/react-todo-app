@@ -12,17 +12,12 @@ sass.compiler = dartSass;
 const path = {
   bulma: {
     src: './node_modules/bulma/css/bulma.min.css',
-    dest: './src/bulma',
+    dest: './src/vendor',
   },
   scss: {
     src: './src/scss/**/*.scss',
     dest: './src/css',
     rename: 'styles.min.css',
-  },
-  ts: {
-    src: './src/**/*.{ts, tsx}',
-    dest: './public',
-    rename: 'index.min.js',
   },
 };
 

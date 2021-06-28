@@ -1,93 +1,29 @@
 import { FC } from 'react';
-import { GrCheckboxSelected, GrCheckbox, GrEdit, GrTrash } from 'react-icons/all';
+import TodoLists from './TodoLists';
+import Modal from './Modal';
+import useTodos from '../hooks/useTodos';
 
 const Main: FC = () => {
+  const { todos, handleClose } = useTodos();
+
   return (
-    <main id='Main'>
-      <div>
+    <>
+      <main id='Main'>
         <div>
-          <h3>Number of Todos: 9</h3>
           <div>
-            <p>
-              <button type='button'>
-                <span>
-                  <GrCheckboxSelected />
-                </span>
-              </button>
-            </p>
-            <p>
-              <input type='text' className='input' value='Some todo A.' />
-            </p>
-            <p>
-              <button type='button'>
-                <span>
-                  <GrEdit />
-                </span>
-              </button>
-            </p>
-            <p>
-              <button type='button'>
-                <span>
-                  <GrTrash />
-                </span>
-              </button>
-            </p>
-          </div>
-          <div>
-            <p>
-              <button type='button'>
-                <span>
-                  <GrCheckbox />
-                </span>
-              </button>
-            </p>
-            <p>
-              <input type='text' className='input' value='Some todo A.' />
-            </p>
-            <p>
-              <button type='button'>
-                <span>
-                  <GrEdit />
-                </span>
-              </button>
-            </p>
-            <p>
-              <button type='button'>
-                <span>
-                  <GrTrash />
-                </span>
-              </button>
-            </p>
-          </div>
-          <div>
-            <p>
-              <button type='button'>
-                <span>
-                  <GrCheckbox />
-                </span>
-              </button>
-            </p>
-            <p>
-              <input type='text' className='input' value='Some todo A.' />
-            </p>
-            <p>
-              <button type='button'>
-                <span>
-                  <GrEdit />
-                </span>
-              </button>
-            </p>
-            <p>
-              <button type='button'>
-                <span>
-                  <GrTrash />
-                </span>
-              </button>
-            </p>
+            {todos.loading
+              ? <h3>Loading...</h3>
+              : <h3>Number of Todos: {todos.data.filter(({ deleted }) => deleted !== true)
+                .length}</h3>}
+            {todos.data
+              && todos.data.filter(({ deleted }) => deleted !== true)
+                .map(todo => <TodoLists key={todo.id} {...todo} />)}
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+      {todos.error && <Modal message={todos.error} handleClose={handleClose} />}
+      {todos.alert && <Modal message={todos.alert} handleClose={handleClose} />}
+    </>
   )
 }
 

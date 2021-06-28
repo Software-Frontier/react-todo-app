@@ -1,5 +1,5 @@
 @charset 'utf-8';
-@use '../bulma/bulma.min.css';
+@use '../vendor/bulma.min.css';
 // Import a Google Font
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
@@ -29,5 +29,6 @@ $input-shadow: none;
 div#App {
   @import './header';
   @import './main';
+  @import './modal';
   @import './footer';
 }

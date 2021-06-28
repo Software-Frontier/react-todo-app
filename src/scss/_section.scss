@@ -1,0 +1,38 @@
+section {
+  @extend .modal-card-body, .is-flex, .is-justify-content-center;
+
+  div:first-child {
+    @extend .field, .has-addons;
+
+    & > p:nth-child(1) {
+      & > input:first-child {
+        @extend .input, .is-info;
+        border-radius: 50% 0 0 50%;
+      }
+    }
+
+    & > p:nth-child(2) {
+      & > button:first-child {
+        @extend .button, .is-success;
+        border-radius: 0 50% 50% 0;
+      }
+    }
+
+    & > :is(p) {
+      @extend .control;
+
+      & > :is(button) {
+        border-radius: 0;
+
+        & > :is(span) {
+          @extend .icon;
+        }
+      }
+
+      & > :is(input) {
+        @extend .input;
+        border-radius: 0;
+      }
+    }
+  }
+}

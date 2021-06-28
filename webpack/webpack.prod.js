@@ -1,11 +1,11 @@
 const { merge } = require('webpack-merge'),
   MiniCssExtractPlugin = require('mini-css-extract-plugin'),
-  CleanWebpackPlugin = require('clean-webpack-plugin'),
+  { CleanWebpackPlugin } = require('clean-webpack-plugin'),
   config = require('./webpack.config');
 
 module.exports = merge(config, {
   mode: 'production',
-  devtool: 'none',
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -15,7 +15,7 @@ module.exports = merge(config, {
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
+    new MiniCssExtractPlugin({ filename: 'css/[name].[contenthash].min.css' }),
     new CleanWebpackPlugin(),
   ],
 });

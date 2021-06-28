@@ -5,7 +5,7 @@ const path = require('path'),
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.tsx'),
   output: {
-    filename: '[name].[contenthash].min.js',
+    filename: 'js/[name].[contenthash].min.js',
     path: path.resolve(__dirname, '..', './build'),
     clean: true,
   },
@@ -69,7 +69,12 @@ module.exports = {
       inject: 'head',
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: 'src', to: 'build' }],
+      patterns: [
+        {
+          from: 'src/images',
+          to: 'images',
+        },
+      ],
     }),
   ],
 };
